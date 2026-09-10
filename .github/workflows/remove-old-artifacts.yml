@@ -1,18 +1,18 @@
-name: Remove Old Artifacts
+# name: Remove Old Artifacts
 
-on:
-  schedule:
-    # Every day at 1am
-    - cron: '0 1 * * *'
+# on:
+#   schedule:
+#     # Every day at 1am
+#     - cron: '0 1 * * *'
 
-jobs:
-  remove-old-artifacts:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+# jobs:
+#   remove-old-artifacts:
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 10
 
-    steps:
-    - name: Remove Old Artifacts
-      uses: c-hive/gha-remove-artifacts@44fc7acaf1b3d0987da0e8d4707a989d80e9554b # v1
-      with:
-        age: '1 week'
-        skip-tags: true
+#     steps:
+#     - name: Remove Old Artifacts
+#       uses: c-hive/gha-remove-artifacts@44fc7acaf1b3d0987da0e8d4707a989d80e9554b # v1
+#       with:
+#         age: '1 week'
+#         skip-tags: true
