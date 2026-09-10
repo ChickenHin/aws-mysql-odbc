@@ -120,7 +120,7 @@ jobs:
         shell: bash
         run: |
           export PATH="${{ github.workspace }}/build/lib/${{env.WINDOWS_BUILD_TYPE}}":$PATH
-          ctest -C $WINDOWS_BUILD_TYPE --output-on-failure
+          ctest -C $WINDOWS_BUILD_TYPE --output-on-failure -V
 
       - name: Check memory leaks
         if: always()
@@ -353,7 +353,7 @@ jobs:
         if: success()
         working-directory: ${{ github.workspace }}/build/unit_testing
         shell: bash
-        run: ctest --output-on-failure
+        run: ctest --output-on-failure -V
 
       # - name: Check memory leaks
       #   if: always()
