@@ -2,20 +2,20 @@ name: Community Tests
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - '*'
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.jpg'
-      - '**/README.txt'
-      - '**/LICENSE.txt'
-      - 'docs/**'
-      - 'ISSUE_TEMPLATE/**'
-      - '**/remove-old-artifacts.yml'
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - '*'
+  #   paths-ignore:
+  #     - '**/*.md'
+  #     - '**/*.jpg'
+  #     - '**/README.txt'
+  #     - '**/LICENSE.txt'
+  #     - 'docs/**'
+  #     - 'ISSUE_TEMPLATE/**'
+  #     - '**/remove-old-artifacts.yml'
 
 permissions:
   id-token: write
@@ -142,24 +142,24 @@ jobs:
           TEST_DRIVER: AWS ODBC Driver for MySQL
 
       # Upload artifacts
-      - name: Upload build artifacts - Binaries
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: windows-sln
-          path: ${{ github.workspace }}/build/MySQL_Connector_ODBC.sln
-      - name: Upload build artifacts - Binaries
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: windows-binaries
-          path: ${{ github.workspace }}/build/bin/
-      - name: Upload build artifacts - Libraries
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: windows-community-libraries
-          path: ${{ github.workspace }}/build/lib/
+      # - name: Upload build artifacts - Binaries
+      #   if: always()
+      #   uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      #   with:
+      #     name: windows-sln
+      #     path: ${{ github.workspace }}/build/MySQL_Connector_ODBC.sln
+      # - name: Upload build artifacts - Binaries
+      #   if: always()
+      #   uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      #   with:
+      #     name: windows-binaries
+      #     path: ${{ github.workspace }}/build/bin/
+      # - name: Upload build artifacts - Libraries
+      #   if: always()
+      #   uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      #   with:
+      #     name: windows-community-libraries
+      #     path: ${{ github.workspace }}/build/lib/
       - name: Upload community test artifacts
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -299,18 +299,18 @@ jobs:
           ODBCINSTINI: ${{ github.workspace }}/build/test/odbcinst.ini
 
       # Upload artifacts
-      - name: Upload build artifacts - Binaries
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: macos-community-binaries
-          path: ${{ github.workspace }}/build/bin/
-      - name: Upload build artifacts - Libraries
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: macos-libraries
-          path: ${{ github.workspace }}/build/lib/
+      # - name: Upload build artifacts - Binaries
+      #   if: always()
+      #   uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      #   with:
+      #     name: macos-community-binaries
+      #     path: ${{ github.workspace }}/build/bin/
+      # - name: Upload build artifacts - Libraries
+      #   if: always()
+      #   uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+      #   with:
+      #     name: macos-libraries
+      #     path: ${{ github.workspace }}/build/lib/
       - name: Upload test artifacts
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
